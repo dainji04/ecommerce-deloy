@@ -1,0 +1,235 @@
+{
+  "flash-sales": [
+    {
+      "id": 1,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": "160",
+      "sales": 40,
+      "stock": 88
+    },
+    {
+      "id": 2,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/sgadaytsiy9gtchx39rz.png",
+      "name": "AK-900 Wired Keyboard",
+      "price": "1160",
+      "sales": 35,
+      "stock": 75
+    },
+    {
+      "id": 3,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/cttthsppy3r0mjawinvk.png",
+      "name": "IPS LCD Gaming Monitor",
+      "price": "400",
+      "sales": 30,
+      "stock": 99
+    },
+    {
+      "id": 4,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uoger9v0ac4npt32c43l.png",
+      "name": "S-Series Comfort Chair",
+      "price": "400",
+      "sales": 0,
+      "stock": 15
+    }
+  ],
+  "best-sell": [
+    {
+      "id": 1,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/gucci_bag.png",
+      "name": "The north coat",
+      "price": "360",
+      "sales": 30,
+      "stock": 65
+    },
+    {
+      "id": 2,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/bummaxx.png",
+      "name": "Gucci duffle bag",
+      "price": "1160",
+      "sales": 20,
+      "stock": 65
+    },
+    {
+      "id": 3,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/coat.png",
+      "name": "RGB liquid CPU Cooler",
+      "price": "170",
+      "sales": 5,
+      "stock": 65
+    },
+    {
+      "id": 4,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/bookself.png",
+      "name": "Small BookSelf",
+      "price": "360",
+      "sales": 0,
+      "stock": 65
+    }
+  ],
+  "our-products": [
+    {
+      "id": 1,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/car_toy.png",
+      "name": "Kids Electric Car",
+      "price": "960",
+      "stock": 65
+    },
+    {
+      "id": 2,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/laptop.png",
+      "name": "ASUS FHD Gaming Laptop",
+      "price": "700",
+      "stock": 95
+    },
+    {
+      "id": 3,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/shoeSports.png",
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": "1160",
+      "stock": 35
+    },
+    {
+      "id": 4,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/ps2.png",
+      "name": "GP11 Shooter USB Gamepad",
+      "price": "660",
+      "stock": 55
+    },
+    {
+      "id": 5,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/cameraCanon.png",
+      "name": "CANON EOS DSLR Camera",
+      "price": "360",
+      "stock": 95
+    },
+    {
+      "id": 6,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/shampoo.png",
+      "name": "Curology Product Set",
+      "price": "500",
+      "stock": 145
+    },
+    {
+      "id": 7,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/bomber.png",
+      "name": "Quilted Satin Jacket",
+      "price": "660",
+      "stock": 55
+    },
+    {
+      "id": 8,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/dog_food.png",
+      "name": "Breed Dry Dog Food",
+      "price": "100",
+      "stock": 35
+    }
+  ],
+  "just-for-you": [
+    {
+      "id": 1,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": "160",
+      "sales": 40,
+      "stock": 88
+    },
+    {
+      "id": 2,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/laptop.png",
+      "name": "ASUS FHD Gaming Laptop",
+      "price": "700",
+      "stock": 95
+    },
+    {
+      "id": 3,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/shoeSports.png",
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": "1160",
+      "stock": 35
+    },
+    {
+      "id": 4,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/ps2.png",
+      "name": "GP11 Shooter USB Gamepad",
+      "price": "660",
+      "stock": 55
+    },
+    {
+      "id": 5,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/cameraCanon.png",
+      "name": "CANON EOS DSLR Camera",
+      "price": "360",
+      "stock": 95
+    },
+    {
+      "id": 6,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/shampoo.png",
+      "name": "Curology Product Set",
+      "price": "500",
+      "stock": 145
+    },
+    {
+      "id": 7,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/bomber.png",
+      "name": "Quilted Satin Jacket",
+      "price": "660",
+      "stock": 55
+    },
+    {
+      "id": 8,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/dog_food.png",
+      "name": "Breed Dry Dog Food",
+      "price": "100",
+      "stock": 35
+    },
+    {
+      "id": 9,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/gucci_bag.png",
+      "name": "The north coat",
+      "price": "360",
+      "sales": 30,
+      "stock": 65
+    },
+    {
+      "id": 10,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/bummaxx.png",
+      "name": "Gucci duffle bag",
+      "price": "1160",
+      "sales": 20,
+      "stock": 65
+    },
+    {
+      "id": 11,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/coat.png",
+      "name": "RGB liquid CPU Cooler",
+      "price": "170",
+      "sales": 5,
+      "stock": 65
+    },
+    {
+      "id": 12,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/bookself.png",
+      "name": "Small BookSelf",
+      "price": "360",
+      "sales": 0,
+      "stock": 65
+    }
+  ],
+  "user-products": [
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "product": "HAVIT HV-G92 Gamepad",
+      "price": 160,
+      "quantity": 2,
+      "subtotal": ""
+    },
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/laptop.png",
+      "product": "ASUS FHD Gaming Laptop",
+      "price": 700,
+      "quantity": 1,
+      "subtotal": ""
+    }
+  ]
+}
