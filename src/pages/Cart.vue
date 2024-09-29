@@ -140,7 +140,7 @@ export default {
   },
 
   mounted() {
-    const url = "http://localhost:3000/user-products";
+    const url = "https://database-fake-api.vercel.app/user-products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

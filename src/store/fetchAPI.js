@@ -5,7 +5,7 @@ export default function () {
   const lengthList = ref(null);
   const error = ref(null);
   const fetchData = async (nameList) => {
-    const URL = `http://localhost:3000/${nameList}`;
+    const URL = `https://database-fake-api.vercel.app/${nameList}`;
     try {
       const response = await fetch(URL);
       if (!response.ok) throw new Error("Something went wrong!!");

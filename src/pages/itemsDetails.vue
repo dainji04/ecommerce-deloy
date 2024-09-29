@@ -262,7 +262,7 @@ export default {
     };
   },
   mounted() {
-    fetch(`http://localhost:3000/${this.nameList}/${this.id}`)
+    fetch(`https://database-fake-api.vercel.app/${this.nameList}/${this.id}`)
       .then((res) => res.json())
       .then((data) => (this.item = data))
       .catch((err) => console.log("error: " + err));
