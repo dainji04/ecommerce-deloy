@@ -31,6 +31,70 @@
       "price": "400",
       "sales": 0,
       "stock": 15
+    },
+    {
+      "id": 5,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": "160",
+      "sales": 40,
+      "stock": 88
+    },
+    {
+      "id": 6,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/sgadaytsiy9gtchx39rz.png",
+      "name": "AK-900 Wired Keyboard",
+      "price": "1160",
+      "sales": 35,
+      "stock": 75
+    },
+    {
+      "id": 7,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/cttthsppy3r0mjawinvk.png",
+      "name": "IPS LCD Gaming Monitor",
+      "price": "400",
+      "sales": 30,
+      "stock": 99
+    },
+    {
+      "id": 8,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uoger9v0ac4npt32c43l.png",
+      "name": "S-Series Comfort Chair",
+      "price": "400",
+      "sales": 0,
+      "stock": 15
+    },
+    {
+      "id": 9,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": "160",
+      "sales": 40,
+      "stock": 88
+    },
+    {
+      "id": 10,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/sgadaytsiy9gtchx39rz.png",
+      "name": "AK-900 Wired Keyboard",
+      "price": "1160",
+      "sales": 35,
+      "stock": 75
+    },
+    {
+      "id": 11,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/cttthsppy3r0mjawinvk.png",
+      "name": "IPS LCD Gaming Monitor",
+      "price": "400",
+      "sales": 30,
+      "stock": 99
+    },
+    {
+      "id": 12,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uoger9v0ac4npt32c43l.png",
+      "name": "S-Series Comfort Chair",
+      "price": "400",
+      "sales": 0,
+      "stock": 15
     }
   ],
   "best-sell": [
@@ -123,6 +187,22 @@
       "name": "Breed Dry Dog Food",
       "price": "100",
       "stock": 35
+    },
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/sgadaytsiy9gtchx39rz.png",
+      "name": "AK-900 Wired Keyboard",
+      "price": "1160",
+      "quantity": 1,
+      "subtotal": "",
+      "id": 9
+    },
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607766/ecommerce-vuejs/best%20selling/bummaxx.png",
+      "name": "Gucci duffle bag",
+      "price": "1160",
+      "subtotal": "",
+      "quantity": 1,
+      "id": 10
     }
   ],
   "just-for-you": [
@@ -216,20 +296,16 @@
       "stock": 65
     }
   ],
+  "wish-list": [],
   "user-products": [
     {
-      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
-      "product": "HAVIT HV-G92 Gamepad",
-      "price": 160,
-      "quantity": 2,
-      "subtotal": ""
-    },
-    {
-      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/laptop.png",
-      "product": "ASUS FHD Gaming Laptop",
-      "price": 700,
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/cameraCanon.png",
+      "name": "CANON EOS DSLR Camera",
+      "price": "360",
       "quantity": 1,
-      "subtotal": ""
+      "subtotal": "",
+      "nameList": "just-for-you",
+      "id": 1
     }
   ]
 }

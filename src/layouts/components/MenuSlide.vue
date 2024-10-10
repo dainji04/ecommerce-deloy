@@ -25,7 +25,14 @@
           />
         </div>
         <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Electronics</h2>
+          <router-link
+            :to="{
+              name: 'allProducts',
+              params: { nameList: nameList },
+            }"
+          >
+            <h2>Electronics</h2>
+          </router-link>
         </div>
         <div class="cursor-pointer hover:underline decoration-[#ccc]">
           <h2>Home & Lifestyle</h2>
@@ -48,7 +55,7 @@
       </div>
     </div>
     <div class="ml-4 mr-11 w-[0.5px] h-[384px] opacity-30 bg-black"></div>
-    <div
+    <Swiper
       class="flex justify-center w-[892px] h-[344px] mt-10 bg-black select-none relative"
     >
       <div class="ml-16 mt-[58px] text-white mr-10">
@@ -84,6 +91,39 @@
         <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
         <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
       </div>
-    </div>
+    </Swiper>
   </div>
 </template>
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { ref } from "vue";
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const progressCircle = ref(null);
+    const progressContent = ref(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+      progressCircle.value.style.setProperty("--progress", 1 - progress);
+      progressContent.value.textContent = `${Math.ceil(time / 1000)}s`;
+    };
+    return {
+      onAutoplayTimeLeft,
+      progressCircle,
+      progressContent,
+      modules: [Autoplay, Pagination, Navigation],
+    };
+  },
+  data() {
+    const nameList = "flash-sales";
+    const id = 1;
+    return {
+      id,
+      nameList,
+    };
+  },
+};
+</script>

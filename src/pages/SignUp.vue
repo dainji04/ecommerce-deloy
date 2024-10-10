@@ -38,6 +38,7 @@
         </form>
         <button
           class="mt-4 w-full flex justify-center items-center gap-4 bg-white border border-black rounded-md py-4"
+          @click="signInGoogle"
         >
           <img src="@/assets/fonts/google.svg" alt="" />
           <p>Sign up with Google</p>
@@ -85,6 +86,30 @@ export default {
     };
   },
   methods: {
+    signInGoogle() {
+      console.log(1);
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(() => {
+          console.log("Google Sign-in successful");
+          setTimeout(() => {
+            this.$router.push("/");
+          }, 2000);
+        })
+        .catch((error) => {
+          console.log("Google Sign-in failed", error);
+        });
+      // signInWithPopup(getAuth(), provider)
+      //   .then((result) => {
+      //     console.log(result.user);
+      //     router.push("/");
+      //   })
+      //   .catch((error) => {
+      //     console.log("Google Sign-in failed", error);
+      //   });
+    },
     minlength(value, minLength) {
       return value.length > minLength ? true : false;
     },

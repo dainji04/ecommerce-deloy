@@ -34,7 +34,7 @@
           <router-link class="hover:underline decoration-[#ccc]" to="/contact">
             Contact
           </router-link>
-          <router-link class="hover:underline decoration-[#ccc]" to="/">
+          <router-link class="hover:underline decoration-[#ccc]" to="/about">
             About
           </router-link>
           <router-link
@@ -66,7 +66,7 @@
           <router-link to="/cart">
             <img class="cursor-pointer" src="@/assets/fonts/cart.svg" alt="" />
           </router-link>
-          <div class="flex flex-col relative" v-show="checkLog.login">
+          <div class="flex flex-col relative" v-if="checkLog.login">
             <button @click="toggleSetting">
               <img src="@/assets/fonts/profile.svg" alt="" />
               <ul

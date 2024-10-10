@@ -4,6 +4,7 @@ import router from "./router";
 import antd from "ant-design-vue";
 import firebase from "firebase/compat/app";
 import { createPinia } from "pinia";
+
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 

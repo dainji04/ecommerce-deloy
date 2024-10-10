@@ -98,6 +98,7 @@
           :key="item.id"
         >
           <router-link
+            v-if="item.id < 5"
             :to="{
               name: 'itemsDetails',
               params: { id: item.id, nameList: nameList },
@@ -108,9 +109,11 @@
             >
               <div
                 class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md"
+                v-if="item.sales > 0"
               >
                 <p class="text-white text-xs">-{{ item.sales }}%</p>
               </div>
+
               <img
                 loading="lazy"
                 class="items-product p-[14px]"
@@ -119,24 +122,26 @@
               />
               <div
                 class="absolute top-3 right-3 flex flex-col justify-center gap-2"
+                @click.stop.prevent="addToWishList(item, nameList)"
+                @click="() => open('wish list')"
               >
                 <img
                   loading="lazy"
-                  class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
+                  class="w-12 h-12 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
                   src="@/assets/fonts/heart.svg"
-                  alt=""
-                />
-                <img
-                  loading="lazy"
-                  class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
-                  src="@/assets/fonts/eye.svg"
                   alt=""
                 />
               </div>
               <div
                 class="add-to-cart absolute bottom-0 left-50% w-full py-2 flex items-center justify-center bg-black"
               >
-                <a href="#" class="text-white">Add To Cart</a>
+                <a
+                  @click.stop.prevent="addToCart(item, nameList)"
+                  @click="() => open('cart')"
+                  class="text-white w-full flex justify-center items-center hover:text-red-400"
+                >
+                  Add To Cart
+                </a>
               </div>
             </div>
             <div class="flex flex-col gap-2">
@@ -189,20 +194,38 @@
         </div>
       </div>
       <div class="w-full flex items-center justify-center my-[60px]">
-        <button class="py-4 px-12 bg-primary text-white font-medium">
-          Views All Products
-        </button>
+        <router-link
+          :to="{ name: 'allProducts', params: { nameList: nameList } }"
+        >
+          <button class="py-4 px-12 bg-primary text-white font-medium">
+            Views All Products
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
   <div class="line w-full h-[0.5px] bg-black opacity-30"></div>
+  <contextHolder />
 </template>
+
+<script setup>
+import { notification } from "ant-design-vue";
+const [api, contextHolder] = notification.useNotification();
+const open = (placement) => openNotification(placement);
+const openNotification = (placement) => {
+  api.success({
+    message: `Added success`,
+    description: `click ${placement} to view item`,
+  });
+};
+</script>
+
 <script>
 import useFetch from "@/store/fetchAPI";
 export default {
   data() {
     const nameList = "flash-sales";
-    const { listItems, fetchData } = useFetch();
+    const { listItems, addToCart, addToWishList, fetchData } = useFetch();
     fetchData(nameList);
     return {
       items: listItems,
@@ -212,6 +235,8 @@ export default {
       minutes: "19",
       seconds: "31",
       nameList,
+      addToCart,
+      addToWishList,
     };
   },
   mounted() {
@@ -276,5 +301,8 @@ export default {
   100% {
     opacity: 1;
   }
+}
+#items > .hiddenItems:nth-child(n + 5) {
+  display: none;
 }
 </style>

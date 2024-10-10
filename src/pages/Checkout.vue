@@ -101,7 +101,7 @@
                   :src="item.img"
                   alt=""
                 />
-                <p>{{ item.product }}</p>
+                <p>{{ item.name }}</p>
               </div>
               <div>
                 {{ item.price }}
@@ -174,7 +174,7 @@
                 class="mt-4 bg-primary text-white font-medium py-4 px-12 rounded-md"
                 type="submit"
               >
-                Place Order
+                <router-link to="/complete-order"> Place Order </router-link>
               </button>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default {
     };
   },
   mounted() {
-    const url = "https://database-fake-api.vercel.app/user-products";
+    const url = "http://localhost:3000/user-products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

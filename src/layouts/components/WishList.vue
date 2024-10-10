@@ -14,7 +14,8 @@
           </div>
           <div class="flex items-center gap-2">
             <button
-              class="py-4 px-12 font-medium rounded-md border border-[#d4d4d4]"
+              class="py-4 px-12 font-medium rounded-md border border-[#d4d4d4] hover:bg-primary hover:text-white"
+              @click="moveAllToBag()"
             >
               Move All To Bag
             </button>
@@ -41,17 +42,26 @@
               <img class="items-product p-[14px]" :src="item.img" alt="" />
               <div
                 class="absolute top-3 right-3 flex flex-col justify-center gap-2"
+                @click.stop.prevent="addToWishList(item, nameList)"
+                @click="() => open('wish list')"
               >
                 <img
-                  class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
-                  src="@/assets/fonts/delete.svg"
+                  loading="lazy"
+                  class="w-12 h-12 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
+                  src="@/assets/fonts/heart.svg"
                   alt=""
                 />
               </div>
               <div
                 class="add-to-cart absolute bottom-0 left-50% w-full py-2 flex items-center justify-center bg-black"
               >
-                <a href="#" class="text-white">Add To Cart</a>
+                <a
+                  @click.stop.prevent="addToCart(item, nameList)"
+                  @click="() => open('cart')"
+                  class="text-white w-full flex justify-center items-center hover:text-red-400"
+                >
+                  Add To Cart
+                </a>
               </div>
             </div>
             <div class="flex flex-col gap-2">
@@ -65,21 +75,59 @@
       </div>
     </div>
   </div>
+  <contextHolder />
 </template>
+<script setup>
+import { notification } from "ant-design-vue";
+const [api, contextHolder] = notification.useNotification();
+const open = (placement) => openNotification(placement);
+const openNotification = (placement) => {
+  api.success({
+    message: `Added success`,
+    description: `click ${placement} to view item`,
+  });
+};
+</script>
 <script>
 import useFetch from "@/store/fetchAPI";
 export default {
   data() {
-    const nameList = "our-products";
-    const { listItems, lengthList, fetchData } = useFetch();
+    const nameList = "wish-list";
+    const { listItems, lengthList, fetchData, deleteData } = useFetch();
     fetchData(nameList);
-
+    let items = listItems;
     return {
-      items: listItems,
+      items,
       nameList,
       lengthItems: lengthList,
+      deleteData,
     };
+  },
+  methods: {
+    removeItem(index) {
+      this.deleteData(this.nameList, index);
+      setTimeout(() => {
+        const { listItems, fetchData } = useFetch();
+        console.log(listItems);
+        fetchData(this.nameList);
+        this.items = listItems;
+        console.log(listItems);
+      }, 1000);
+    },
+    moveAllToBag() {
+      const { addToCart, deleteData } = useFetch();
+      for (let i in this.items) {
+        addToCart(this.items[i], this.nameList);
+        deleteData(this.nameList, this.items[i].id);
+        setTimeout(() => {
+          const { listItems, fetchData } = useFetch();
+          console.log(listItems);
+          fetchData(this.nameList);
+          this.items = listItems;
+          console.log(listItems);
+        }, 1000);
+      }
+    },
   },
 };
 </script>
-<style lang=""></style>

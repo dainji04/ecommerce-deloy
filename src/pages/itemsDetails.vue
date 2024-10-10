@@ -253,6 +253,7 @@ export default {
   data() {
     const { listItems, fetchData } = useFetch();
     fetchData("flash-sales");
+    console.log(this.nameList);
     return {
       item: null,
       relatedItems: listItems,
@@ -262,7 +263,7 @@ export default {
     };
   },
   mounted() {
-    fetch(`https://database-fake-api.vercel.app/${this.nameList}/${this.id}`)
+    fetch(`http://localhost:3000/${this.nameList}/${this.id}`)
       .then((res) => res.json())
       .then((data) => (this.item = data))
       .catch((err) => console.log("error: " + err));

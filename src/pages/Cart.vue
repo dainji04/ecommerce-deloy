@@ -14,9 +14,17 @@
         :columns="columns"
         :data-source="products"
       >
-        <template #bodyCell="{ column, text }">
+        <template #bodyCell="{ column, text, record }">
           <template v-if="column.dataIndex === 'name'">
-            <a>{{ text }}</a>
+            {{ text }}
+          </template>
+          <template v-else-if="column.dataIndex === 'delete'">
+            <a-popconfirm
+              title="Sure to delete?"
+              @confirm="onDelete(record.id)"
+            >
+              <a>Delete</a>
+            </a-popconfirm>
           </template>
         </template>
       </a-table>
@@ -89,15 +97,15 @@
   </div>
 </template>
 <script>
-import { reactive, ref, onBeforeMount } from "vue";
+import { reactive, ref } from "vue";
+import useFetch from "@/store/fetchAPI";
 // import { StripeCheckout } from "@vue-stripe/vue-stripe";
-import firebase from "firebase/compat/app";
 export default {
   setup() {
     const columns = [
       {
         title: "Product",
-        dataIndex: "product",
+        dataIndex: "name",
       },
       {
         title: "Price",
@@ -110,6 +118,10 @@ export default {
       {
         title: "Subtotal",
         dataIndex: "subtotal",
+      },
+      {
+        title: "delete",
+        dataIndex: "delete",
       },
     ];
     const rowSelection = {
@@ -126,21 +138,27 @@ export default {
         name: record.name,
       }),
     };
+    const onDelete = (key) => {
+      const name = "user-products";
+      const { deleteData } = useFetch();
+      deleteData(name, key);
+      window.location.reload();
+    };
     const formState = reactive({
       "input-number": 1,
     });
-
     return {
       formState,
       columns,
       products: ref([]),
       subTotal: ref(null),
       rowSelection,
+      onDelete,
     };
   },
 
   mounted() {
-    const url = "https://database-fake-api.vercel.app/user-products";
+    const url = "http://localhost:3000/user-products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

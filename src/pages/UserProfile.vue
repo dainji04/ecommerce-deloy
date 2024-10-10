@@ -87,9 +87,9 @@
   </div>
 </template>
 <script>
-import firebase from "firebase/compat/app";
+import { getAuth, updateProfile, updatePhoneNumber } from "firebase/auth";
 import "firebase/auth";
-
+import User from "@/store/getUser";
 export default {
   data() {
     return {
@@ -103,64 +103,55 @@ export default {
       address: "",
     };
   },
+  async mounted() {
+    const user = await User().getCurrentUser();
+    this.getNameUser();
+    this.email = await user.email;
+    this.phoneNumber = await user.phoneNumber;
+    this.address = await user.photoURL;
+  },
   methods: {
-    toggleEditMode() {
-      if (this.showEditBtn) {
-        const user = firebase.auth().currentUser;
-        console.log(1);
-
-        let name = user.displayName;
-        this.email = user.email;
-        this.phoneNumber = user.phoneNumber;
-
-        if (name) {
-          for (var i = name.length; i >= 0; i--) {
-            if (name[i] == " ") {
-              for (var j = i; j < name.length; j++) {
-                this.lastName += name[j];
-              }
-              for (var j = 0; j < i; j++) {
-                this.firstName += name[j];
-              }
-              break;
-            }
+    async getNameUser() {
+      const user = await User().getCurrentUser();
+      let name = user.displayName;
+      console.log(name);
+      for (var i = name.length; i >= 0; i--) {
+        if (name[i] == " ") {
+          for (var j = i; j < name.length; j++) {
+            this.lastName += name[j];
           }
+          for (var j = 0; j < i; j++) {
+            this.firstName += name[j];
+          }
+          break;
         }
-
+      }
+    },
+    async toggleEditMode() {
+      if (this.showEditBtn) {
         this.inputStyle = "select";
       } else {
-        this.resetInput();
-        this.inputStyle = "select";
+        this.inputStyle = "unselectable";
       }
       this.showUpdateBtn = !this.showUpdateBtn;
       this.showEditBtn = !this.showEditBtn;
     },
-    resetInput() {
-      this.inputStyle = "unselectable";
-      this.firstName = "";
-      this.lastName = "";
-      this.email = "";
-      this.phoneNumber = "0907165254";
-      this.address = "";
-    },
-    updateUserProfile() {
-      const user = firebase.auth().currentUser;
-
-      user
-        .updateProfile({
-          displayName: `${this.firstName}${this.lastName}`,
-          photoURL: "https://example.com/jane-q-user/profile.jpg",
-          email: this.email,
-          phoneNumber: "0907165254",
-        })
+    async updateUserProfile() {
+      const auth = getAuth();
+      updateProfile(auth.currentUser, {
+        displayName: `${this.firstName} ${this.lastName}`,
+        email: this.email,
+        photoURL: `${this.address}`,
+      })
         .then(() => {
-          this.showUpdateBtn = false;
-          this.showEditBtn = true;
-          this.resetInput();
-          console.log("update success");
+          console.log(auth.currentUser);
+          this.inputStyle = "unselectable";
+          this.showUpdateBtn = !this.showUpdateBtn;
+          this.showEditBtn = !this.showEditBtn;
+          alert("profile is updated");
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((err) => {
+          console.log(err);
         });
     },
   },
@@ -172,7 +163,6 @@ export default {
   padding: 13px 8px 13px 0;
   pointer-events: none;
 }
-
 .select {
   background-color: #f5f5f5;
   padding: 13px 8px 13px 0;

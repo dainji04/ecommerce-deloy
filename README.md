@@ -4,6 +4,13 @@
 
 - Ideas about us for this web: [link web gốc](https://moco.supercell.com/en/)
 
+- respon Ideas: [vercel app](https://moco.supercell.com/en/)
+  ![template](/src/assets/images/ideas/vercel-responsive.png)
+
+- autoPlay for slider high Product
+
+![alt text](/src/assets/images/ideas/image.png)
+
 ## Project setup
 
 ```

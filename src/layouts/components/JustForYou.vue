@@ -14,7 +14,7 @@
           <div class="flex items-center gap-2">
             <button
               @click="toggleShowAllItems"
-              class="py-4 px-12 font-medium rounded-md border border-[#d4d4d4]"
+              class="py-4 px-12 font-medium rounded-md border border-[#d4d4d4] hover:bg-primary hover:text-white"
             >
               {{ textToggle }}
             </button>
@@ -42,22 +42,26 @@
               <img class="items-product p-[14px]" :src="item.img" alt="" />
               <div
                 class="absolute top-3 right-3 flex flex-col justify-center gap-2"
+                @click.stop.prevent="addToWishList(item, nameList)"
+                @click="() => open('wish list')"
               >
                 <img
-                  class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
+                  loading="lazy"
+                  class="w-12 h-12 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
                   src="@/assets/fonts/heart.svg"
-                  alt=""
-                />
-                <img
-                  class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
-                  src="@/assets/fonts/eye.svg"
                   alt=""
                 />
               </div>
               <div
                 class="add-to-cart absolute bottom-0 left-50% w-full py-2 flex items-center justify-center bg-black"
               >
-                <a href="#" class="text-white">Add To Cart</a>
+                <a
+                  @click.stop.prevent="addToCart(item, nameList)"
+                  @click="() => open('cart')"
+                  class="text-white w-full flex justify-center items-center hover:text-red-400"
+                >
+                  Add To Cart
+                </a>
               </div>
             </div>
             <div class="flex flex-col gap-2">
@@ -101,13 +105,25 @@
       </div>
     </div>
   </div>
+  <contextHolder />
 </template>
+<script setup>
+import { notification } from "ant-design-vue";
+const [api, contextHolder] = notification.useNotification();
+const open = (placement) => openNotification(placement);
+const openNotification = (placement) => {
+  api.success({
+    message: `Added success`,
+    description: `click ${placement} to view item`,
+  });
+};
+</script>
 <script>
 import useFetch from "@/store/fetchAPI";
 export default {
   data() {
     const nameList = "just-for-you";
-    const { listItems, fetchData } = useFetch();
+    const { listItems, fetchData, addToCart, addToWishList } = useFetch();
 
     fetchData(nameList);
     return {
@@ -115,6 +131,8 @@ export default {
       nameList,
       hiddenItems: "hiddenItems",
       textToggle: "See All",
+      addToCart,
+      addToWishList,
     };
   },
   methods: {
@@ -126,6 +144,17 @@ export default {
         this.hiddenItems = "";
         this.textToggle = "Hide Items";
       }
+    },
+    methods: {
+      reloadItem() {
+        setTimeout(() => {
+          const { listItems, fetchData } = useFetch();
+          console.log(listItems);
+          fetchData(this.nameList);
+          this.items = listItems;
+          console.log(listItems);
+        }, 1000);
+      },
     },
   },
 };
