@@ -54,7 +54,7 @@
           <div class="flex gap-2">
             <img
               class="w-[75px] h-[75px]"
-              src="@/assets/images/qrcode.png"
+              src="@/assets/images/image.png"
               alt=""
             />
             <div class="flex flex-col justify-between">
