@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black mt-[140px]">
     <div
-      class="text-white grid grid-cols-5 gap-[50px] pt-20 max-w-[1170px] mx-auto"
+      class="text-white grid grid-cols-5 gap-[50px] pt-20 max-w-[1170px] mx-auto max-tablet:grid-cols-1 max-tablet:mx-5 max-tablet:gap-[80px]"
     >
       <div>
         <div class="flex flex-col gap-6 mb-4">
@@ -9,13 +9,15 @@
           <h2>Subrises</h2>
           <p>Get 10% off your first order</p>
         </div>
-        <div class="relative flex justify-center items-center">
+        <div
+          class="relative flex justify-center items-center max-tablet:justify-start"
+        >
           <input
-            class="py-3 pl-4 bg-black border-white border-2 rounded-md"
+            class="py-3 pl-4 bg-black border-white border-2 rounded-md max-tablet:w-[100%]"
             type="text"
             placeholder="enter your email"
           />
-          <img class="absolute right-0" src="@/assets/fonts/send.svg" alt="" />
+          <img class="absolute right-3" src="@/assets/fonts/send.svg" alt="" />
         </div>
       </div>
       <div class="flex flex-col gap-6">
@@ -50,7 +52,11 @@
         <div class="flex flex-col gap-4 text-sm">
           <p class="text-xs opacity-70">Save $3 with App New User Only</p>
           <div class="flex gap-2">
-            <img src="@/assets/images/Qrcode.png" alt="" />
+            <img
+              class="w-[75px] h-[75px]"
+              src="@/assets/images/qrcode.png"
+              alt=""
+            />
             <div class="flex flex-col justify-between">
               <a href="#">
                 <img src="@/assets/images/chPlay.png" alt="" />

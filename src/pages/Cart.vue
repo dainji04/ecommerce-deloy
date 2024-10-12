@@ -142,7 +142,9 @@ export default {
       const name = "user-products";
       const { deleteData } = useFetch();
       deleteData(name, key);
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     };
     const formState = reactive({
       "input-number": 1,
@@ -158,7 +160,8 @@ export default {
   },
 
   mounted() {
-    const url = "http://localhost:3000/user-products";
+    // const url = "http://localhost:3000/user-products";
+    const url = "https://database-fake-api.vercel.app/user-products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

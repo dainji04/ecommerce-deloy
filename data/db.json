@@ -296,16 +296,35 @@
       "stock": 65
     }
   ],
-  "wish-list": [],
-  "user-products": [
+  "wish-list": [
     {
-      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718611570/ecommerce-vuejs/Our%20Products/cameraCanon.png",
-      "name": "CANON EOS DSLR Camera",
-      "price": "360",
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uxktertbmmtakzyk5akv.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": "160",
       "quantity": 1,
       "subtotal": "",
-      "nameList": "just-for-you",
+      "nameList": "flash-sales",
       "id": 1
+    }
+  ],
+  "user-products": [
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/sgadaytsiy9gtchx39rz.png",
+      "name": "AK-900 Wired Keyboard",
+      "price": "1160",
+      "quantity": 1,
+      "subtotal": "",
+      "nameList": "flash-sales",
+      "id": 2
+    },
+    {
+      "img": "https://res.cloudinary.com/dgh7tgs5l/image/upload/v1718607730/ecommerce-vuejs/flashsales/uoger9v0ac4npt32c43l.png",
+      "name": "S-Series Comfort Chair",
+      "price": "400",
+      "quantity": 1,
+      "subtotal": "",
+      "nameList": "flash-sales",
+      "id": 4
     }
   ]
 }

@@ -1,5 +1,7 @@
 <template>
-  <div class="max-w-[1170px] mx-auto block">
+  <div
+    class="max-w-[1170px] mx-auto block tablet:max-pc:max-w-[900px] tablet:max-pc:overflow-x-hidden"
+  >
     <MenuSlide />
     <FlashSale />
     <BrowseItems />

@@ -1,10 +1,15 @@
+4
 <template>
   <div class="mt-[140px]">
     <div class="flash-sales w-full flex flex-col relative">
       <div class="w-full">
-        <div class="w-full flex items-end justify-between">
-          <div class="flex items-end gap-[87px]">
-            <div class="flex flex-col gap-6">
+        <div
+          class="w-full flex items-end justify-between max-tablet:justify-center"
+        >
+          <div
+            class="flex items-end gap-[87px] max-tablet:flex-col max-tablet:gap-5 max-tablet:items-start"
+          >
+            <div class="flex flex-col gap-6 max-tablet:flex-row">
               <div class="flex items-center gap-4">
                 <img
                   loading="lazy"
@@ -69,33 +74,18 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="p-[11px] bg-grayScale rounded-full cursor-pointer">
-              <img
-                loading="lazy"
-                class="invert rotate-[180deg]"
-                src="@/assets/fonts/arrow-right.svg"
-                alt=""
-              />
-            </div>
-            <div class="p-[11px] bg-grayScale rounded-full cursor-pointer">
-              <img
-                loading="lazy"
-                class="invert"
-                src="@/assets/fonts/arrow-right.svg"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
     <div class="mt-8">
-      <div class="grid grid-cols-4 gap-8">
+      <div
+        class="grid grid-cols-4 gap-8 max-tablet:grid-cols-2 max-tablet:mx-2 max-tablet:gap-4"
+      >
         <div
-          class="flex flex-col gap-4 w-[270px] cursor-pointer"
+          class="flex flex-col gap-4 w-[270px] cursor-pointer max-pc:w-[100%]"
           v-for="item in items"
           :key="item.id"
+          v-show="item.id < 5"
         >
           <router-link
             v-if="item.id < 5"
@@ -105,7 +95,7 @@
             }"
           >
             <div
-              class="item w-full h-[250px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
+              class="item w-full h-[250px] max-tablet:h-[150px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
             >
               <div
                 class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md"
@@ -116,7 +106,7 @@
 
               <img
                 loading="lazy"
-                class="items-product p-[14px]"
+                class="items-product p-[14px] max-tablet:max-h-[150px]"
                 :src="item.img"
                 alt=""
               />
@@ -127,7 +117,7 @@
               >
                 <img
                   loading="lazy"
-                  class="w-12 h-12 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
+                  class="w-12 h-12 max-tablet:w-6 max-tablet:h-6 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
                   src="@/assets/fonts/heart.svg"
                   alt=""
                 />
@@ -193,7 +183,9 @@
           </router-link>
         </div>
       </div>
-      <div class="w-full flex items-center justify-center my-[60px]">
+      <div
+        class="w-full flex items-center justify-center my-[60px] max-tablet:my-8"
+      >
         <router-link
           :to="{ name: 'allProducts', params: { nameList: nameList } }"
         >

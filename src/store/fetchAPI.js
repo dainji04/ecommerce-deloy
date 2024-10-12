@@ -4,11 +4,11 @@ export default function () {
   const listItems = ref([]);
   const lengthList = ref(null);
   const error = ref(null);
-
+  const URL = `https://database-fake-api.vercel.app/`;
+  // const URL = `http://localhost:3000/`;
   const fetchData = async (nameList) => {
-    const URL = `http://localhost:3000/${nameList}`;
     try {
-      const response = await fetch(URL);
+      const response = await fetch(URL + nameList);
       if (!response.ok) throw new Error("Something went wrong!!");
 
       listItems.value = await response.json();
@@ -20,7 +20,6 @@ export default function () {
   };
 
   const postData = async (nameList, data) => {
-    const URL = `http://localhost:3000/${nameList}`;
     const options = {
       method: "POST",
       headers: {
@@ -28,7 +27,7 @@ export default function () {
       },
       body: JSON.stringify(data),
     };
-    fetch(URL, options).then((res) => {
+    fetch(URL + nameList, options).then((res) => {
       return res.json();
     });
   };
@@ -63,7 +62,6 @@ export default function () {
 
   // not yet complete
   const editData = async (nameList, data) => {
-    const URL = `http://localhost:3000/${nameList}`;
     const options = {
       method: "PUT",
       headers: {
@@ -71,7 +69,7 @@ export default function () {
       },
       body: JSON.stringify(data),
     };
-    fetch(URL, options)
+    fetch(URL + nameList, options)
       .then((res) => {
         return res.json();
       })
@@ -79,10 +77,10 @@ export default function () {
   };
   // not yet complete
   const deleteData = async (nameList, id) => {
-    const URL = `http://localhost:3000/${nameList}/${id}`;
-    console.log(URL);
+    let newURL = `${URL}${nameList}/${id}`;
+    console.log(newURL);
     try {
-      const res = await fetch(URL, {
+      const res = await fetch(newURL, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("delete is failed");

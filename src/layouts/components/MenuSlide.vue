@@ -1,6 +1,6 @@
 <template>
   <div id="Slide-and-menu" class="flex justify-between">
-    <div class="relative mt-10">
+    <div class="relative mt-10 max-tablet:hidden">
       <div class="flex flex-col gap-4">
         <div
           class="flex gap-12 cursor-pointer hover:underline decoration-[#ccc]"
@@ -54,9 +54,11 @@
         </div>
       </div>
     </div>
-    <div class="ml-4 mr-11 w-[0.5px] h-[384px] opacity-30 bg-black"></div>
-    <Swiper
-      class="flex justify-center w-[892px] h-[344px] mt-10 bg-black select-none relative"
+    <div
+      class="ml-4 mr-11 w-[0.5px] h-[384px] opacity-30 bg-black max-tablet:hidden"
+    ></div>
+    <div
+      class="flex justify-center w-[892px] h-[344px] mt-10 bg-black select-none relative max-tablet:w-full"
     >
       <div class="ml-16 mt-[58px] text-white mr-10">
         <div class="flex items-center gap-6">
@@ -91,7 +93,7 @@
         <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
         <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
       </div>
-    </Swiper>
+    </div>
   </div>
 </template>
 <script>

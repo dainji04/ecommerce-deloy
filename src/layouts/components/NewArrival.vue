@@ -22,11 +22,11 @@
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-2 gap-5">
+  <div class="grid grid-cols-2 gap-5 max-tablet:grid-cols-1">
     <div class="bg-black relative flex justify-center">
       <img
         loading="lazy"
-        class="absolute bottom-0 z-0"
+        class="absolute bottom-0 z-0 max-tablet:relative"
         src="@/assets/images/ps5-playstation5.png"
         alt=""
       />
@@ -61,7 +61,9 @@
       <div class="grid grid-cols-2 gap-5">
         <div class="bg-black flex items-center justify-center relative">
           <img loading="lazy" src="@/assets/images/speakers.png" alt="" />
-          <div class="text-white absolute bottom-6 left-6 w-[255px] grid gap-2">
+          <div
+            class="text-white absolute bottom-6 left-6 w-[255px] grid gap-2 max-tablet:w-[150px]"
+          >
             <h2 class="text-2xl font-[inter] font-semibold">Speakers</h2>
             <p class="text-[14px]">Amazon wireless speakers</p>
             <a class="underline decoration-[#ccc]" href="#">Shop Now</a>
@@ -69,7 +71,9 @@
         </div>
         <div class="bg-black flex items-center justify-center relative">
           <img loading="lazy" src="@/assets/images/gucci_perfume.png" alt="" />
-          <div class="text-white absolute bottom-6 left-6 w-[255px] grid gap-2">
+          <div
+            class="text-white absolute bottom-6 left-6 w-[255px] grid gap-2 max-tablet:w-[150px]"
+          >
             <h2 class="text-2xl font-[inter] font-semibold">Perfume</h2>
             <p class="text-[14px]">GUCCI INTENSE OUD EDP</p>
             <a class="underline decoration-[#ccc]" href="#">Shop Now</a>
@@ -78,7 +82,9 @@
       </div>
     </div>
   </div>
-  <div class="mt-[140px] flex items-center justify-center gap-[88px]">
+  <div
+    class="mt-[140px] flex items-center justify-center gap-[88px] max-tablet:flex-col"
+  >
     <div class="flex flex-col justify-center items-center gap-6">
       <div class="w-20 h-20 relative flex justify-center items-center">
         <img

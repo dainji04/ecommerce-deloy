@@ -23,9 +23,10 @@
                 <p class="text-[#0F6]">In Stock</p>
               </div>
               <div v-else>out of stock</div>
-              <p class="text-2xl">
+              <p class="text-2xl" v-if="item.sales">
                 ${{ calculatorSales(item.price, item.sales) }}
               </p>
+              <p v-else class="text-2xl">${{ item.price }}</p>
             </div>
             <div>
               <p class="text-justify">
@@ -79,6 +80,7 @@
               <div>
                 <button
                   class="font-medium text-base bg-primary text-white py-[10px] px-12 rounded-md"
+                  @click="addToCart(item, nameList)"
                 >
                   Buy Now
                 </button>
@@ -142,20 +144,24 @@
             Relateđ item
           </h2>
         </div>
-        <div class="grid grid-cols-4 gap-8">
+        <div
+          class="grid grid-cols-4 gap-8 max-tablet:grid-cols-2 max-tablet:mx-2 max-tablet:gap-4"
+        >
           <div
-            class="flex flex-col gap-4 w-[270px] cursor-pointer"
+            class="flex flex-col gap-4 w-[270px] cursor-pointer max-pc:w-[100%]"
             v-for="product in relatedItems"
             :key="product.id"
+            v-show="product.id < 5"
           >
             <router-link
+              v-if="product.id < 5"
               :to="{
                 name: 'itemsDetails',
                 params: { id: product.id, nameList: nameList },
               }"
             >
               <div
-                class="item w-full h-[250px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
+                class="item w-full h-[250px] max-tablet:h-[150px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
               >
                 <div
                   class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md"
@@ -164,7 +170,7 @@
                 </div>
                 <img
                   loading="lazy"
-                  class="items-product p-[14px]"
+                  class="items-product p-[14px] max-tablet:max-h-[150px]"
                   :src="product.img"
                   alt=""
                 />
@@ -173,7 +179,7 @@
                 >
                   <img
                     loading="lazy"
-                    class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
+                    class="w-12 h-12 max-tablet:w-6 max-tablet:h-6 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
                     src="@/assets/fonts/heart.svg"
                     alt=""
                   />
@@ -251,7 +257,7 @@ import useFetch from "@/store/fetchAPI";
 export default {
   props: ["id", "nameList"],
   data() {
-    const { listItems, fetchData } = useFetch();
+    const { listItems, fetchData, addToCart } = useFetch();
     fetchData("flash-sales");
     console.log(this.nameList);
     return {
@@ -260,10 +266,13 @@ export default {
       sizes: ["XS", "S", "M", "L", "XL"],
       quantity: 1,
       selectedSize: null,
+      addToCart,
     };
   },
   mounted() {
-    fetch(`http://localhost:3000/${this.nameList}/${this.id}`)
+    // const URL = "http://localhost:3000/";
+    const URL = `https://database-fake-api.vercel.app/`;
+    fetch(`${URL}${this.nameList}/${this.id}`)
       .then((res) => res.json())
       .then((data) => (this.item = data))
       .catch((err) => console.log("error: " + err));
