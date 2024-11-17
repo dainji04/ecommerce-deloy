@@ -102,8 +102,8 @@
       <div
         class="flex items-center gap-[188px] max-tablet:gap-6 max-tablet:ml-4"
       >
-        <router-link to="/" class="font-bold select-none">
-          its'Dainji
+        <router-link to="/" class="text-primary text-xl font-bold select-none">
+          Dainji
         </router-link>
         <nav class="flex gap-12 max-tablet:hidden">
           <router-link class="hover:underline decoration-[#ccc]" to="/">
@@ -256,7 +256,7 @@ export default {
 <style scoped>
 nav a.router-link-exact-active {
   text-decoration: underline;
-  text-decoration-color: #ccc;
+  text-decoration-color: #000;
 }
 .hiddenMenu {
   translate: -100%;

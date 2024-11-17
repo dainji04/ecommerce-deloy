@@ -40,7 +40,7 @@
               cancel
             </button>
             <button
-              class="bg-primary px-12 py-4 rounded text-white font-medium"
+              class="button--hover px-12 py-4 rounded text-white font-medium"
               @click="updateUserProfile"
             >
               updateProfile

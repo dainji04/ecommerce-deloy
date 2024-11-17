@@ -189,9 +189,7 @@
         <router-link
           :to="{ name: 'allProducts', params: { nameList: nameList } }"
         >
-          <button class="py-4 px-12 bg-primary text-white font-medium">
-            Views All Products
-          </button>
+          <button class="button--hover">Views All Products</button>
         </router-link>
       </div>
     </div>
@@ -282,8 +280,6 @@ export default {
 }
 .item:hover .add-to-cart {
   display: flex;
-}
-.item:hover > img {
 }
 @keyframes showAddToCart {
   0% {

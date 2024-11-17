@@ -2,7 +2,7 @@
   <div id="Slide-and-menu" class="flex justify-between">
     <div class="slide flex gap-4 min-w-[892px] h-[344px] mt-10">
       <div
-        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+        class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
       >
         <div
           class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div
-        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+        class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
       >
         <div
           class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div
-        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+        class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
       >
         <div
           class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div
-        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+        class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
       >
         <div
           class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
@@ -130,7 +130,7 @@
         </div>
       </div>
       <div
-        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+        class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
       >
         <div
           class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"

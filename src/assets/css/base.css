@@ -3,6 +3,9 @@
 * {
   font-family: "Poppins";
 }
+body {
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -14,4 +17,41 @@ html {
 } */
 input:focus-visible {
   outline: none;
+}
+.button--hover {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  border-radius: 4px;
+  padding: 16px 48px;
+  border: 2px solid rgb(219, 68, 68);
+  color: rgb(219, 68, 68);
+  font-weight: 700;
+}
+
+.button--hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  background-color: rgb(219, 68, 68);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+.button--hover:hover,
+.button--hover:focus {
+  color: #fff;
+}
+.button--hover:hover::before {
+  transition: all 0.5s ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.button--hover:active {
+  transform: scale(0.9);
 }

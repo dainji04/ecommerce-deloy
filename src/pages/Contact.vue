@@ -73,10 +73,7 @@
             ></textarea>
           </div>
         </div>
-        <button
-          class="bg-primary text-white font-semibold text-base py-4 px-12 rounded-md float-right mt-8"
-          type="submit"
-        >
+        <button class="button--hover float-right mt-8" type="submit">
           Send Massage
         </button>
       </form>
