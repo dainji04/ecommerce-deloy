@@ -1,5 +1,8 @@
 <template>
-  <div id="Slide-and-menu" class="flex justify-between">
+  <div
+    id="Slide-and-menu"
+    class="flex justify-between relative max-tablet:overflow-hidden"
+  >
     <div class="slide flex gap-4 min-w-[892px] h-[344px] mt-10">
       <div
         class="item justify-center max-tablet:justify-start max-tablet:max-w-[400px]"
