@@ -87,7 +87,7 @@
               <h2 class="font-semibold">{{ item.name }}</h2>
               <div class="flex items-center gap-3">
                 <p class="text-primary font-semibold">
-                  {{ calculatorSales(item.price, item.sales) }}
+                  {{ calculatorSales(item.price, 0) }}
                 </p>
                 <p class="opacity-50 font-semibold line-through">
                   ${{ item.price }}
