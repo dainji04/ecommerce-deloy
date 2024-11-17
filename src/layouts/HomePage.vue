@@ -4,7 +4,6 @@
   >
     <MenuSlide />
     <FlashSale />
-    <BrowseItems />
     <BestSelling />
     <OurProducts />
     <NewArrival />
@@ -14,7 +13,6 @@
 <script>
 import MenuSlide from "./components/MenuSlide.vue";
 import FlashSale from "./components/FlashSale.vue";
-import BrowseItems from "./components/BrowseItems.vue";
 import BestSelling from "./components/BestSelling.vue";
 import OurProducts from "./components/OurProducts.vue";
 import NewArrival from "./components/NewArrival.vue";
@@ -26,7 +24,6 @@ export default {
   components: {
     MenuSlide,
     FlashSale,
-    BrowseItems,
     BestSelling,
     OurProducts,
     NewArrival,

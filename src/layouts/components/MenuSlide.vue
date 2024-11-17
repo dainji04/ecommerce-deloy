@@ -1,131 +1,235 @@
 <template>
   <div id="Slide-and-menu" class="flex justify-between">
-    <div class="relative mt-10 max-tablet:hidden">
-      <div class="flex flex-col gap-4">
+    <div class="slide flex gap-4 min-w-[892px] h-[344px] mt-10">
+      <div
+        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+      >
         <div
-          class="flex gap-12 cursor-pointer hover:underline decoration-[#ccc]"
+          class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
         >
-          <h3>Woman's Fashion</h3>
-          <img
-            loading="lazy"
-            class="rotate-[-90deg] invert"
-            src="@/assets/fonts/down-arrow.svg"
-            alt=""
-          />
+          <div class="flex items-center gap-6">
+            <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
+            <h3>Iphone 14 series</h3>
+          </div>
+          <div class="mt-5 w-[300px]">
+            <h1
+              class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
+            >
+              Up to 10% off Voucher
+            </h1>
+          </div>
+          <div class="select-auto">
+            <a
+              href="#"
+              class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
+              >Shop Now
+              <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
+            /></a>
+          </div>
         </div>
         <div
-          class="flex gap-[78px] cursor-pointer hover:underline decoration-[#ccc]"
+          class="w-[496px] h-[352px] mt-4 overflow-hidden max-tablet:absolute"
         >
-          <h3>Men's Fashion</h3>
-          <img
-            loading="lazy"
-            class="rotate-[-90deg] invert"
-            src="@/assets/fonts/down-arrow.svg"
-            alt=""
-          />
+          <img loading="lazy" src="@/assets/images/slider.png" alt="" />
         </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <router-link
-            :to="{
-              name: 'allProducts',
-              params: { nameList: nameList },
-            }"
-          >
-            <h2>Electronics</h2>
-          </router-link>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Home & Lifestyle</h2>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Medicine</h2>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Sports & Outdoor</h2>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Baby's & Toys</h2>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Groceries & Pets</h2>
-        </div>
-        <div class="cursor-pointer hover:underline decoration-[#ccc]">
-          <h2>Health & Beauty</h2>
-        </div>
-      </div>
-    </div>
-    <div
-      class="ml-4 mr-11 w-[0.5px] h-[384px] opacity-30 bg-black max-tablet:hidden"
-    ></div>
-    <div
-      class="flex justify-center w-[892px] h-[344px] mt-10 bg-black select-none relative max-tablet:w-full"
-    >
-      <div class="ml-16 mt-[58px] text-white mr-10">
-        <div class="flex items-center gap-6">
-          <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
-          <h3>Iphone 14 series</h3>
-        </div>
-        <div class="mt-5 w-[300px]">
-          <h1
-            class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
-          >
-            Up to 10% off Voucher
-          </h1>
-        </div>
-        <div class="select-auto">
-          <a
-            href="#"
-            class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
-            >Shop Now
-            <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
-          /></a>
-        </div>
-      </div>
-      <div class="w-[496px] h-[352px] mt-4 overflow-hidden">
-        <img loading="lazy" src="@/assets/images/slider.png" alt="" />
       </div>
       <div
-        class="flex items-center gap-3 absolute bottom-0 cursor-pointer mb-2"
+        class="item justify-center max-tablet:justify-start max-tablet:w-full"
       >
-        <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
-        <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
-        <img loading="lazy" src="@/assets/fonts/red-dot-slide.svg" alt="" />
-        <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
-        <img loading="lazy" src="@/assets/fonts/dot-slide.svg" alt="" />
+        <div
+          class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
+        >
+          <div class="flex items-center gap-6">
+            <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
+            <h3>Iphone 15 Pro</h3>
+          </div>
+          <div class="mt-5 w-[300px]">
+            <h1
+              class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
+            >
+              Up to 10% off Voucher
+            </h1>
+          </div>
+          <div class="select-auto">
+            <a
+              href="#"
+              class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
+              >Shop Now
+              <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
+            /></a>
+          </div>
+        </div>
+        <div
+          class="w-[496px] h-[352px] mt-4 overflow-hidden max-tablet:absolute"
+        >
+          <img loading="lazy" src="@/assets/images/iphone15pro.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+      >
+        <div
+          class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
+        >
+          <div class="flex items-center gap-6">
+            <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
+            <h3>Iphone 16 Pro</h3>
+          </div>
+          <div class="mt-5 w-[300px]">
+            <h1
+              class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
+            >
+              Up to 10% off Voucher
+            </h1>
+          </div>
+          <div class="select-auto">
+            <a
+              href="#"
+              class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
+              >Shop Now
+              <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
+            /></a>
+          </div>
+        </div>
+        <div
+          class="w-[496px] h-[352px] mt-4 overflow-hidden max-tablet:absolute"
+        >
+          <img loading="lazy" src="@/assets/images/iphone16pro.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+      >
+        <div
+          class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
+        >
+          <div class="flex items-center gap-6">
+            <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
+            <h3>Macbook Air M2</h3>
+          </div>
+          <div class="mt-5 w-[300px]">
+            <h1
+              class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
+            >
+              Up to 10% off Voucher
+            </h1>
+          </div>
+          <div class="select-auto">
+            <a
+              href="#"
+              class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
+              >Shop Now
+              <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
+            /></a>
+          </div>
+        </div>
+        <div
+          class="w-[496px] h-[352px] mt-4 overflow-hidden max-tablet:absolute"
+        >
+          <img loading="lazy" src="@/assets/images/macbookm2.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="item justify-center max-tablet:justify-start max-tablet:w-full"
+      >
+        <div
+          class="ml-16 max-tablet:ml-2 mt-[58px] max-tablet:mt-2 text-white mr-10 z-10"
+        >
+          <div class="flex items-center gap-6">
+            <img loading="lazy" src="@/assets/images/logo-apple.png" alt="" />
+            <h3>Mac Mini</h3>
+          </div>
+          <div class="mt-5 w-[300px]">
+            <h1
+              class="font-[inter] text-5xl font-semibold leading-[60px] tracking-[1.92px] not-italic"
+            >
+              Up to 10% off Voucher
+            </h1>
+          </div>
+          <div class="select-auto">
+            <a
+              href="#"
+              class="flex items-center gap-2 mt-[22px] hover:underline decoration-[#ccc]"
+              >Shop Now
+              <img loading="lazy" src="@/assets/fonts/arrow-right.svg" alt=""
+            /></a>
+          </div>
+        </div>
+        <div
+          class="w-[496px] h-[352px] mt-4 overflow-hidden max-tablet:absolute"
+        >
+          <img loading="lazy" src="@/assets/images/macmini.png" alt="" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
   setup() {
-    const progressCircle = ref(null);
-    const progressContent = ref(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-      progressCircle.value.style.setProperty("--progress", 1 - progress);
-      progressContent.value.textContent = `${Math.ceil(time / 1000)}s`;
+    const nameList = ref("flash-sales");
+    const intervalId = ref(null);
+
+    const prev = () => {
+      const list = document.querySelectorAll(".slide > .item");
+      document.querySelector(".slide").prepend(list[list.length - 1]);
     };
-    return {
-      onAutoplayTimeLeft,
-      progressCircle,
-      progressContent,
-      modules: [Autoplay, Pagination, Navigation],
+
+    const next = () => {
+      const list = document.querySelectorAll(".slide > .item");
+      document.querySelector(".slide").appendChild(list[0]);
     };
-  },
-  data() {
-    const nameList = "flash-sales";
-    const id = 1;
+
+    onMounted(() => {
+      intervalId.value = setInterval(() => {
+        next();
+      }, 5000);
+    });
+
+    onUnmounted(() => {
+      clearInterval(intervalId.value);
+    });
+
     return {
-      id,
       nameList,
+      prev,
+      next,
     };
   },
 };
 </script>
+<style lang="css" scoped>
+.slide {
+  width: max-content;
+}
+.item {
+  height: 370px;
+  width: 1170px;
+  transition: 1s;
+  position: absolute;
+  display: flex;
+  background-color: #000;
+  border-radius: 5px;
+  user-select: none;
+}
+.item:nth-child(1) {
+  transform: translate(-210%);
+  opacity: 0;
+}
+.item:nth-child(2) {
+  transform: translate(-105%);
+  opacity: 0;
+}
+.item:nth-child(3) {
+  transform: translate(0);
+}
+.item:nth-child(4) {
+  transform: translate(105%);
+  opacity: 0;
+}
+.item:nth-child(5) {
+  transform: translate(210%);
+  opacity: 0;
+}
+</style>

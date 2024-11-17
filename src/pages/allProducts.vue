@@ -1,8 +1,10 @@
 <template>
   <div class="mt-8 max-w-[1170px] mx-auto">
-    <div class="grid grid-cols-4 gap-8">
-      <div
-        class="flex flex-col gap-4 w-[270px] cursor-pointer"
+    <div
+      class="grid grid-cols-4 gap-8 max-tablet:grid-cols-2 max-tablet:mx-2 max-tablet:gap-4"
+    >
+      <template
+        class="flex flex-col gap-4 w-[270px] cursor-pointer max-pc:w-[100%]"
         v-for="item in items"
         :key="item.id"
       >
@@ -101,7 +103,7 @@
             </div>
           </div>
         </router-link>
-      </div>
+      </template>
     </div>
   </div>
 </template>

@@ -81,7 +81,7 @@
       <div
         class="grid grid-cols-4 gap-8 max-tablet:grid-cols-2 max-tablet:mx-2 max-tablet:gap-4"
       >
-        <div
+        <template
           class="flex flex-col gap-4 w-[270px] cursor-pointer max-pc:w-[100%]"
           v-for="item in items"
           :key="item.id"
@@ -98,7 +98,7 @@
               class="item w-full h-[250px] max-tablet:h-[150px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
             >
               <div
-                class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md"
+                class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md z-10"
                 v-if="item.sales > 0"
               >
                 <p class="text-white text-xs">-{{ item.sales }}%</p>
@@ -181,7 +181,7 @@
               </div>
             </div>
           </router-link>
-        </div>
+        </template>
       </div>
       <div
         class="w-full flex items-center justify-center my-[60px] max-tablet:my-8"
@@ -233,7 +233,7 @@ export default {
   },
   mounted() {
     let targetDate = new Date();
-    targetDate.setFullYear(2024, 10, 2);
+    targetDate.setFullYear(2025, 4, 1);
     targetDate.setHours(0, 0, 0);
     this.updateTime(targetDate);
     setInterval(() => {

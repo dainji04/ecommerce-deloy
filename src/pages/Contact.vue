@@ -1,6 +1,6 @@
 <template lang="">
   <div class="container-contact max-w-[1170px] mx-auto">
-    <div id="road-map" class="flex items-center gap-3 my-20">
+    <div id="road-map" class="flex items-center gap-3 my-20 ml-3">
       <a-breadcrumb>
         <a-breadcrumb-item>
           <router-link to="/"> Home </router-link>
@@ -8,7 +8,7 @@
         <a-breadcrumb-item>Contact</a-breadcrumb-item>
       </a-breadcrumb>
     </div>
-    <div class="mt-20 flex gap-8">
+    <div class="mt-20 flex max-tablet:grid gap-8">
       <div class="flex flex-col gap-8 px-9 pt-10 pb-12">
         <div>
           <div class="flex items-center gap-4">
@@ -46,29 +46,31 @@
       </div>
       <form @submit.prevent="sendMessage" class="w-full px-8 py-10">
         <div class="flex flex-col gap-8">
-          <div class="text-black w-full flex justify-between gap-5">
+          <div
+            class="text-black w-full flex max-tablet:grid justify-between gap-5"
+          >
             <input
-              class="w-[33.3333%] bg-gray-100 py-3 pl-4"
+              class="w-[33.3333%] max-tablet:w-[330px] max-tablet: bg-gray-100 py-3 pl-4"
               placeholder="Your Name*"
               v-model="name"
             />
             <input
-              class="w-[33.3333%] bg-gray-100 py-3 pl-4"
+              class="w-[33.3333%] max-tablet:w-[330px] max-tablet: bg-gray-100 py-3 pl-4"
               placeholder="Your Email*"
               v-model="email"
             />
             <input
-              class="w-[33.3333%] bg-gray-100 py-3 pl-4"
+              class="w-[33.3333%] max-tablet:w-[330px] max-tablet: bg-gray-100 py-3 pl-4"
               placeholder="Your Phone*"
               v-model="phone"
             />
           </div>
           <div>
-            <input
-              class="w-full bg-gray-100 pt-3 pr-[608px] pb-[170px] pl-4"
+            <textarea
+              class="w-full h-[250px] text-justify outline-none border-none max-tablet:max-w-[390px] bg-gray-100 pt-3 px-4"
               placeholder="Your message"
               v-model="message"
-            />
+            ></textarea>
           </div>
         </div>
         <button

@@ -24,9 +24,9 @@
       </div>
     </div>
     <div class="mt-[60px]">
-      <div class="grid grid-cols-4 gap-8">
+      <div class="grid grid-cols-4 max-tablet:grid-cols-2 gap-8">
         <div
-          class="flex flex-col gap-4 w-[270px] cursor-pointer"
+          class="flex flex-col gap-4 w-full cursor-pointer"
           v-for="item in items"
           :key="item.id"
         >
@@ -93,7 +93,8 @@ import useFetch from "@/store/fetchAPI";
 export default {
   data() {
     const nameList = "wish-list";
-    const { listItems, lengthList, fetchData, deleteData } = useFetch();
+    const { listItems, lengthList, fetchData, deleteData, addToCart } =
+      useFetch();
     fetchData(nameList);
     let items = listItems;
     return {
@@ -101,6 +102,7 @@ export default {
       nameList,
       lengthItems: lengthList,
       deleteData,
+      addToCart,
     };
   },
   methods: {

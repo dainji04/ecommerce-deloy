@@ -31,12 +31,13 @@
       <div
         class="grid grid-cols-4 gap-8 max-tablet:grid-cols-2 max-tablet:mx-2 max-tablet:gap-4"
       >
-        <div
+        <template
           class="flex flex-col gap-4 w-[270px] cursor-pointer max-pc:w-[100%]"
           v-for="item in items"
           :key="item.id"
         >
           <router-link
+            v-if="item.id < 9"
             :to="{
               name: 'itemsDetails',
               params: { id: item.id, nameList: nameList },
@@ -45,6 +46,13 @@
             <div
               class="item w-full h-[250px] max-tablet:h-[150px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
             >
+              <div
+                class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md z-10"
+                v-if="item.sales > 0"
+              >
+                <p class="text-white text-xs">-{{ item.sales }}%</p>
+              </div>
+
               <img
                 loading="lazy"
                 class="items-product p-[14px] max-tablet:max-h-[150px]"
@@ -78,7 +86,12 @@
             <div class="flex flex-col gap-2">
               <h2 class="font-semibold">{{ item.name }}</h2>
               <div class="flex items-center gap-3">
-                <p class="text-primary font-semibold">${{ item.price }}</p>
+                <p class="text-primary font-semibold">
+                  {{ calculatorSales(item.price, item.sales) }}
+                </p>
+                <p class="opacity-50 font-semibold line-through">
+                  ${{ item.price }}
+                </p>
               </div>
               <div class="flex gap-2">
                 <div class="flex">
@@ -117,7 +130,7 @@
               </div>
             </div>
           </router-link>
-        </div>
+        </template>
       </div>
       <div class="w-full flex items-center justify-center my-[60px]">
         <router-link

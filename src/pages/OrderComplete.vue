@@ -1,13 +1,13 @@
 <template>
-  <div class="max-w-[1170px] mx-auto relative mt-[140px]">
+  <div class="max-w-[1170px] mx-auto max-tablet:mx-3 relative mt-[140px]">
     <img
-      class="absolute top-0 left-0"
+      class="absolute top-0 max-tablet:top-[-30px] left-0"
       src="@/assets/fonts/clockOrder.svg"
       alt=""
     />
     <div class="flex flex-col justify-center items-center">
       <img src="@/assets/fonts/complete.svg" alt="" />
-      <h1 class="mt-8 text-[#101750] text-4xl font-bold">
+      <h1 class="mt-8 text-center text-[#101750] text-4xl font-bold">
         Your Order Is Complete
       </h1>
       <p

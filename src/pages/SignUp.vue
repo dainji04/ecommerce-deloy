@@ -1,10 +1,10 @@
 <template>
   <div class="mt-[60px]">
-    <div class="flex items-center gap-[90px]">
-      <div class="w-[60%] pt-[75px] bg-[#CBE4E8]">
+    <div class="flex items-center gap-[90px] max-tablet:px-4">
+      <div class="w-[60%] pt-[75px] bg-[#CBE4E8] max-tablet:hidden">
         <img src="@/assets/images/signupBG.png" alt="" />
       </div>
-      <div class="w-[30%]">
+      <div class="w-[30%] max-tablet:w-full">
         <h1 class="font-[inter] text-4xl font-medium">Create an account</h1>
         <h2 class="mt-6 mb-12">Enter your details below</h2>
         <form @submit.prevent="validate">

@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-[1170px] mx-auto">
-    <div v-if="item" class="">
+    <div v-if="item" class="max-tablet:px-4">
       <div id="road-map" class="flex items-center gap-3 my-20">
         <a-breadcrumb>
           <a-breadcrumb-item>
@@ -9,13 +9,13 @@
           <a-breadcrumb-item>{{ item.name }}</a-breadcrumb-item>
         </a-breadcrumb>
       </div>
-      <div class="flex w-full justify-between">
+      <div class="flex w-full justify-between max-tablet:flex-col">
         <div
-          class="w-[60%] h-[600px] flex justify-center items-center bg-[#F5F5F5]"
+          class="w-[60%] max-tablet:w-full max-tablet:h-[300px] h-[600px] flex justify-center items-center bg-[#F5F5F5]"
         >
           <img loading="lazy" class="w-[calc(70%)]" :src="item.img" alt="" />
         </div>
-        <div class="w-[35%]">
+        <div class="w-[35%] max-tablet:w-full">
           <div class="flex flex-col gap-4 mb-10">
             <div class="flex flex-col gap-4">
               <h1 class="text-2xl font-semibold">{{ item.name }}</h1>
@@ -164,7 +164,7 @@
                 class="item w-full h-[250px] max-tablet:h-[150px] bg-grayScale rounded-md overflow-hidden outline-none border-none flex items-center justify-center relative"
               >
                 <div
-                  class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md"
+                  class="absolute top-3 left-3 px-3 py-1 bg-primary rounded-md z-10"
                 >
                   <p class="text-white text-xs">-{{ product.sales }}%</p>
                 </div>
@@ -181,12 +181,6 @@
                     loading="lazy"
                     class="w-12 h-12 max-tablet:w-6 max-tablet:h-6 m-[5px] p-[5px] rounded-full bg-white hover:invert cursor-pointer"
                     src="@/assets/fonts/heart.svg"
-                    alt=""
-                  />
-                  <img
-                    loading="lazy"
-                    class="w-8 h-8 m-[5px] p-[5px] rounded-full bg-white cursor-pointer"
-                    src="@/assets/fonts/eye.svg"
                     alt=""
                   />
                 </div>
@@ -259,7 +253,6 @@ export default {
   data() {
     const { listItems, fetchData, addToCart } = useFetch();
     fetchData("flash-sales");
-    console.log(this.nameList);
     return {
       item: null,
       relatedItems: listItems,

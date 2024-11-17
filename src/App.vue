@@ -6,21 +6,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Header from "./layouts/Header.vue";
 import Footer from "./layouts/Footer.vue";
-
 import { Checklogin } from "./store/login";
 
-export default {
-  components: {
-    Header,
-    Footer,
-  },
-  data() {
-    const checkLog = Checklogin();
-    checkLog.userCheck();
-    return {};
-  },
-};
+const checkLog = Checklogin();
+checkLog.userCheck();
 </script>

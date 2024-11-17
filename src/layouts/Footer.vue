@@ -5,7 +5,7 @@
     >
       <div>
         <div class="flex flex-col gap-6 mb-4">
-          <h1 class="text-xl font-bold font-[inter]">Exclusive</h1>
+          <h1 class="text-xl font-bold font-[inter]">Dainji</h1>
           <h2>Subrises</h2>
           <p>Get 10% off your first order</p>
         </div>
@@ -54,7 +54,7 @@
           <div class="flex gap-2">
             <img
               class="w-[75px] h-[75px]"
-              src="@/assets/images/image.png"
+              src="@/assets/images/qrcode.png"
               alt=""
             />
             <div class="flex flex-col justify-between">

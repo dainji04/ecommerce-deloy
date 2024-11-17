@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 max-w-[1170px] mx-auto">
+  <div class="mt-20 max-w-[1170px] mx-auto max-tablet:mx-3">
     <div>
       <a-breadcrumb>
         <a-breadcrumb-item>
@@ -8,10 +8,12 @@
         <a-breadcrumb-item>404 Error</a-breadcrumb-item>
       </a-breadcrumb>
     </div>
-    <div class="w-full flex flex-col justify-center items-center gap-10">
+    <div
+      class="w-full flex flex-col justify-center items-center gap-10 max-tablet:mt-10"
+    >
       <div class="flex flex-col justify-center items-center gap-10">
         <img class="select-none" src="@/assets/fonts/404.svg" alt="" />
-        <p class="font-medium">
+        <p class="font-medium text-center">
           Your visited page not found. You may go to home page.
         </p>
         <router-link to="/">

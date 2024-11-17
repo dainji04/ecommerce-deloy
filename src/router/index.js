@@ -103,6 +103,10 @@ const getCurrentUser = () => {
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top when navigating to a new route
+    return { top: 0 };
+  },
 });
 
 router.beforeEach(async (to, from, next) => {
